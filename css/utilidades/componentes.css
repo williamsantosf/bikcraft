@@ -1,0 +1,32 @@
+.botao {
+  display: inline-block; /*para que divida uma linha com outros elementos e tenha dimensões ajustáveis*/
+  padding: 16px 32px; /*ajuste de dimensões*/
+  background: linear-gradient(
+    #ffbb00,
+    #f2a50c
+  ); /*graidnete lienar conforme prototipo*/
+  border-radius: 4px; /*borda arredondada*/
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /*sombra do botão*/
+  text-transform: uppercase; /*tudo em maíuscula*/
+  color: #332200; /*cordo texto*/
+  font-size: 18px; /*tamanho da fonte*/
+  line-height: 1.33; /*valor relativo à fonte*/
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.botao:hover {
+  background: linear-gradient(
+    #ffb60d,
+    #e59317
+  ); /*efetito do mouse ao tocar o botão*/
+}
+
+/*Ajustando o Responsivo da Introdução*/
+@media (max-width: 600px) {
+  /*Aqui diminuimos o tamanho do botão*/
+  .botao {
+    padding: 12px 6px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,79 @@
+.header-bg {
+  background-color: #000000;
+}
+
+.header {
+  display: flex; /*para alinhas os itens do header um ao lado do outro (poderia ser tambem em grid)*/
+  flex-wrap: wrap; /*para que o header quebre quando a tela diminuir*/
+  gap: 20px; /*distância mínima entre os itens (quando a tela diminuir, pois o space-between os deixa separados na tela)*/
+  justify-content: space-between; /*cria espaçamento reguar entre os itens*/
+  align-items: center; /*alina os itens sempre ao centro do maior item verticalmente*/
+  box-sizing: border-box; /*Não conta os valores de padding na propriedade max-width*/
+  padding: 20px; /*padding*/
+  max-width: 1200px; /*tamnho total que o header deve ocupar na tela (box-sizing faz desconsiderar os valores de padding na soma)*/
+  margin-left: auto; /*alinhar ao centro quando a tela crescer infinitamente*/
+  margin-right: auto; /*alinhar ao centro quando a tela crescer infinitamente*/
+}
+
+.header-menu {
+  display: flex; /*para alinhar os itens um ao lado do outro*/
+  flex-wrap: wrap; /*para que o menu quebre quando a tela diminuir*/
+  gap: 40px; /*espaçamento entre os itens*/
+}
+
+.header-menu a {
+  color: #ffffff;
+  display: inline-block; /*para que o padding funcione direito quando houver quebra de linha*/
+  padding: 16px 0px; /*para aumentar a area de click do menu*/
+  font-size: 18px;
+  position: relative; /*para retirar o decorador do link do fluxo*/
+  font-family: "Poppins";
+  font-weight: 400;
+}
+
+.header-menu a::after {
+  /*Criação do pseudo elemento decorativo do menu*/
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px; /*a largura será zerada para que a ação de hover faça ele crescer*/
+  background: #ffffff;
+  margin-top: 4px;
+  transition: 0.3s; /*velocidade ideal para o elemento surgir suavemente na tela*/
+  position: absolute; /*posição a bsoluta em relação ao elemento pai que é o próprio a*/
+}
+
+.header-menu a:hover::after {
+  /*criando a psuedo classe no pseudo elemento*/
+  width: 100%; /*o pseudo elemento terá 100% do tamanho do elemento pai (a)*/
+} /*Vide media query que retira esse efeito no mobile, por ser desnecessário*/
+
+/*Criação do responsivo - Todos os estilos abaixo só serão aplicados em telas menores que 800px e 600px*/
+@media (max-width: 800px) {
+  .header-menu {
+    gap: 20px;
+  }
+  .header-menu a {
+    /*para deixar os links parecidos com botões no mobile*/
+    background: #111111; /*altera o fundo*/
+    padding: 12px 16px; /*aumenta a area de contato*/
+    border-radius: 4px; /*arredonda as bordas*/
+  }
+  .header-menu a:hover {
+    background-color: #2e2e2e; /*efeito de passar o mouse*/
+  }
+  .header a:after {
+    display: none; /*retirando o pseudo elemento do mobile*/
+  }
+}
+
+@media (max-width: 600px) {
+  /*quando a tela diminuir mais ainda*/
+  .header-menu {
+    gap: 12px; /*diminui o gap*/
+  }
+  .header-menu a {
+    padding: 8px 12px; /*ajusta o padding*/
+    font-size: 14px; /*diminui a fonte*/
+  }
+}
