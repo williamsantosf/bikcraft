@@ -1,18 +1,34 @@
+/*------------------SEÇÃO DE RESETS DE ESTILOS PADRÃO-----------------*/
 /*Primeiro fazemos as configurações gerais e reset de algumas tags*/
 body {
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 600px;
 }
+
+h1,
+ul,
+p {
+  margin: 0px;
+}
+
 /*reset da lista*/
 ul {
-  margin: 0px;
   padding: 0px;
   list-style: none;
 }
 
 a {
   text-decoration: none;
+  color: inherit; /*Para que os links herdem a propiredade do elemento pai*/
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+/*----------------FIM DA SEÇÃO DE RESETS--------------------------------*/
+
 .header-bg {
   background-color: #000000;
 }
@@ -89,4 +105,72 @@ a {
     padding: 8px 12px; /*ajusta o padding*/
     font-size: 14px; /*diminui a fonte*/
   }
+}
+
+.introducao-bg {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: inset 0 -120px #ffffff; /*Essa sombra foi colocada para dar o efeito de vazamento da foto. Na realidade a foto não está vazando o container, e sim está com seus -120px acima da sombra*/
+}
+
+.introducao {
+  display: grid; /*'dispor os elementos da introdução em um grid*/
+  grid-template-columns: 1fr 1fr; /*tamanhos iguais para os grids*/
+  gap: 0px 40px; /*somente espaçamento aos lados*/
+  box-sizing: border-box; /*o padding e a borda são incluídos na largura e altura totais do elemento.*/
+  max-width: 1200px; /*largura total*/
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+} /*Obs.: para otimizar a escrita do CSS, no HTML separamos a imagem do conteúdo em divs diferentes*/
+
+.introducao-conteudo {
+  align-self: end; /*para alinhar a introdução á parte debaixo do container*/
+  padding-bottom: 200px; /*por padrão, os objetos serão posicionados com margin-bottom, para maior consistencia. O valor foi ajustado para 200 para que os demais conteudos não sobrepusessem a box-shadow*/
+}
+
+.introducao img {
+  height: 100%; /*para que ocupe 100% do container (causa distorção)*/
+  object-fit: cover; /*para "cropar a imagem", e ela não distorcer conforme redmensiona*/
+  border-radius: 4px;
+}
+
+.introducao h1 {
+  margin-bottom: 32px;
+  font-size: 64px;
+  line-height: 1.125; /*Sempre usar valores relativos (72px/64px = 1.125)*/
+}
+
+.introducao h1 span {
+  color: #ffbb00;
+}
+.introducao p {
+  margin-bottom: 20px;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #b2b2b2;
+}
+
+.introducao a {
+  display: inline-block; /*para que divida uma linha com outros elementos e tenha dimensões ajustáveis*/
+  padding: 16px 32px; /*ajuste de dimensões*/
+  background: linear-gradient(
+    #ffbb00,
+    #f2a50c
+  ); /*graidnete lienar conforme prototipo*/
+  border-radius: 4px; /*borda arredondada*/
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /*sombra do botão*/
+  text-transform: uppercase; /*tudo em maíuscula*/
+  color: #332200; /*cordo texto*/
+  font-size: 18px; /*tamanho da fonte*/
+  line-height: 1.33; /*valor relativo à fonte*/
+  font-weight: bold; /*negrito*/
+}
+
+.introducao a:hover {
+  background: linear-gradient(
+    #ffb60d,
+    #e59317
+  ); /*efetito do mouse ao tocar o botão*/
 }
