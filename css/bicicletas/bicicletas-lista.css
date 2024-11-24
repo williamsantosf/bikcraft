@@ -1,0 +1,50 @@
+.bicicletas-lista {
+  padding-top: 60px; /*entre seções, optar preferencialmente por padding, margens podem coledir*/
+  padding-bottom: 120px;
+}
+
+.bicicletas-lista h2 {
+  margin-bottom: 40px;
+  box-sizing: border-box; /*para que a largura total seja os valores e padding e margin*/
+  max-width: 1200px; /*largura total*/
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto; /*margens automáticas*/
+  margin-right: auto;
+}
+
+.bicicletas-lista ul {
+  display: flex;
+  gap: 40px;
+  padding: 0 20px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bicicletas-lista a {
+  display: block; /*para que o tab pegue todo o card da bike (foto, nome e preço), pois tudo isso está envolvido em um <a>, que por padrão é inline.*/
+}
+
+.bicicletas-lista img {
+  margin-bottom: 16px;
+}
+
+.bicicletas-lista h3 {
+  margin-bottom: 6px;
+  display: flex; /*para colocarmos junto a ele o pseudo-elelmento*/
+  align-items: center; /*alinhar o h3 e o pseudo-elemento ao centro (do maior)*/
+}
+
+.bicicletas-lista h3::before {
+  content: "";
+  display: inline-block; /*para que pegue valores de padding, height, weight corretamente*/
+  height: 8px;
+  width: 12px;
+  margin-right: 8px;
+  background-color: var(--cor-p1);
+}
+
+.bicicletas-lista li span {
+  padding-left: 20px; /*para alinhar o preço ao h3. os 20px são a soma de widht e margin-right do pseudo elemento*/
+}

@@ -6,6 +6,9 @@ body {
 }
 
 h1,
+h2,
+h3,
+h4,
 ul,
 p {
   margin: 0px;
@@ -25,4 +28,8 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+img[src$="jpg"] {
+  border-radius: 4px; /*Esse seletor de atributos vai arredondar automaticamente as bordas de TODAS as imagens do site que TERMINEM com "jog". Se fosse colocado direto na tag imagem, ele também arredondaria os cantos dos svg*/
 }
