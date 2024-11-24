@@ -1,7 +1,6 @@
 .introducao-bg {
-  background: #000000;
-  color: #ffffff;
-  box-shadow: inset 0 -120px #ffffff; /*Essa sombra foi colocada para dar o efeito de vazamento da foto. Na realidade a foto não está vazando o container, e sim está com seus -120px acima da sombra*/
+  background: var(--cor-12);
+  box-shadow: inset 0 -120px var(--cor-0); /*Essa sombra foi colocada para dar o efeito de vazamento da foto. Na realidade a foto não está vazando o container, e sim está com seus -120px acima da sombra*/
 }
 
 .introducao {
@@ -29,40 +28,31 @@
 
 .introducao h1 {
   margin-bottom: 32px;
-  font-size: 64px;
-  line-height: 1.125; /*Sempre usar valores relativos (72px/64px = 1.125)*/
-  font-family: "Poppins";
-  font-weight: 600;
 }
 
 .introducao h1 span {
-  color: #ffbb00;
+  color: var(--cor-p1);
 }
 .introducao p {
   margin-bottom: 20px;
-  font-size: 24px;
-  line-height: 1.5;
-  color: #b2b2b2;
-  font-family: "Roboto";
-  font-weight: 400;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   /*diminuimos o tamos do H1 e do parágrafo*/
-  .introducao h1 {
+/* .introducao h1 {
     font-size: 48px;
   }
   .introducao p {
     font-size: 18px;
   }
-}
+} */
 
 @media (max-width: 800px) {
   /*Alteramos o background da introdução e diminuimos o box-shadow, e aumentamos o padding superior que estava grudado no header*/
   .introducao-bg {
-    background: #111111;
+    background: var(--cor-11);
     padding-top: 40px;
-    box-shadow: inset 0 -60px #ffffff;
+    box-shadow: inset 0 -60px var(--cor-0);
   }
   .introducao {
     /*Passamos o grid para uma cooluna apenas*/
@@ -74,7 +64,6 @@
   }
   .introducao h1 {
     /*diminuimos o texto e margin-top do h1, mais uma vez*/
-    font-size: 32px;
     margin-bottom: 16px;
   }
   .introducao img {

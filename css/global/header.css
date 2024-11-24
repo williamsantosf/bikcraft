@@ -1,5 +1,5 @@
 .header-bg {
-  background-color: #000000;
+  background-color: var(--cor-12);
 }
 
 .header {
@@ -22,13 +22,9 @@
 }
 
 .header-menu a {
-  color: #ffffff;
   display: inline-block; /*para que o padding funcione direito quando houver quebra de linha*/
   padding: 16px 0px; /*para aumentar a area de click do menu*/
-  font-size: 18px;
   position: relative; /*para retirar o decorador do link do fluxo*/
-  font-family: "Poppins";
-  font-weight: 400;
 }
 
 .header-menu a::after {
@@ -37,7 +33,7 @@
   display: block;
   height: 2px;
   width: 0px; /*a largura será zerada para que a ação de hover faça ele crescer*/
-  background: #ffffff;
+  background: var(--cor-0);
   margin-top: 4px;
   transition: 0.3s; /*velocidade ideal para o elemento surgir suavemente na tela*/
   position: absolute; /*posição a bsoluta em relação ao elemento pai que é o próprio a*/
@@ -55,12 +51,12 @@
   }
   .header-menu a {
     /*para deixar os links parecidos com botões no mobile*/
-    background: #111111; /*altera o fundo*/
+    background: var(--cor-11); /*altera o fundo*/
     padding: 12px 16px; /*aumenta a area de contato*/
     border-radius: 4px; /*arredonda as bordas*/
   }
   .header-menu a:hover {
-    background-color: #2e2e2e; /*efeito de passar o mouse*/
+    background-color: var(--cor-10); /*efeito de passar o mouse*/
   }
   .header a:after {
     display: none; /*retirando o pseudo elemento do mobile*/
