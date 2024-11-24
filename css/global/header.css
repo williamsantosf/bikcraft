@@ -8,11 +8,8 @@
   gap: 20px; /*distância mínima entre os itens (quando a tela diminuir, pois o space-between os deixa separados na tela)*/
   justify-content: space-between; /*cria espaçamento reguar entre os itens*/
   align-items: center; /*alina os itens sempre ao centro do maior item verticalmente*/
-  box-sizing: border-box; /*Não conta os valores de padding na propriedade max-width*/
-  padding: 20px; /*padding*/
-  max-width: 1200px; /*tamnho total que o header deve ocupar na tela (box-sizing faz desconsiderar os valores de padding na soma)*/
-  margin-left: auto; /*alinhar ao centro quando a tela crescer infinitamente*/
-  margin-right: auto; /*alinhar ao centro quando a tela crescer infinitamente*/
+  padding-top: 20px; /*esses paddings não fazem parte da classe utilitária, então devem ser mantidos*/
+  padding-bottom: 20px;
 }
 
 .header-menu {

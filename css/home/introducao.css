@@ -7,12 +7,6 @@
   display: grid; /*'dispor os elementos da introdução em um grid*/
   grid-template-columns: 1fr 1fr; /*tamanhos iguais para os grids*/
   gap: 0px 40px; /*somente espaçamento aos lados*/
-  box-sizing: border-box; /*o padding e a borda são incluídos na largura e altura totais do elemento.*/
-  max-width: 1200px; /*largura total*/
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
 } /*Obs.: para otimizar a escrita do CSS, no HTML separamos a imagem do conteúdo em divs diferentes*/
 
 .introducao-conteudo {

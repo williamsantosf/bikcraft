@@ -1,3 +1,12 @@
+.container {
+  box-sizing: border-box; /*para que a largura total seja os valores e padding e margin*/
+  max-width: 1200px; /*largura total*/
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto; /*margens automáticas*/
+  margin-right: auto;
+}
+
 .botao {
   display: inline-block; /*para que divida uma linha com outros elementos e tenha dimensões ajustáveis*/
   padding: 16px 32px; /*ajuste de dimensões*/
