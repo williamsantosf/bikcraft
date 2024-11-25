@@ -36,3 +36,22 @@
     font-size: 16px;
   }
 }
+
+.link {
+  display: inline-block; /*por padrão é inline, alteramos para block para que pegue os valores*/
+  color: var(--cor-p1);
+  font: 500 1.5rem/1.5 "Poppins", sans-serif; /*forma contrata de atribuir a fonte*/
+  text-transform: uppercase;
+}
+
+.link::after {
+  content: ""; /*criamos um pseudo-elemento para o sublinhado para poder darmos o espaçamento desejado*/
+  display: block; /*'para que pegue valores de largura, altura*/
+  width: 100%;
+  height: 4px;
+  background-color: currentColor; /*essa porpriedade faz o pseudo-elemento herdar a cor do elemento pai, seja ela qual for.*/
+}
+
+.link:hover {
+  color: var(--cor-0); /*efeito de mouse por cima*/
+}

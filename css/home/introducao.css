@@ -15,6 +15,7 @@
 }
 
 .introducao img {
+  width: 100%; /*no safari, por exemplo, isso resolve disorção da foto*/
   height: 100%; /*para que ocupe 100% do container (causa distorção)*/
   object-fit: cover; /*para "cropar a imagem", e ela não distorcer conforme redmensiona*/
   border-radius: 4px;
