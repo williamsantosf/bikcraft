@@ -1,0 +1,63 @@
+.parceiros {
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+.parceiros h2 {
+  margin-bottom: 60px;
+}
+
+.parceiros ul {
+  padding: 0 20px;
+  max-width: 1400px; /*a lista também quebra o layout, tendo tamanho de 1400*/
+  display: grid; /*será em grid, para esse caso melhor flex pois queremos colunas*/
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /*função repeat para repetir 4 vezes 1fr (1fr 1fr 1fr 1fr)*/
+  margin: 0 auto;
+}
+
+.parceiros li {
+  /*cada elemento da lista será flex para que fiquem alinhados*/
+  display: flex;
+  padding: 32px;
+  border-left: 2px solid var(--cor-2); /*colocamos somente bordas à esquerda de todos os elementos*/
+}
+
+.parceiros img {
+  margin: auto; /*ajuste automático das bordas*/
+}
+
+.parceiros li:first-child, /*retirando a borda esquerda diretamente do primeiro e do quinto item da lista*/
+.parceiros li:nth-child(5) {
+  border-left: none;
+}
+
+.parceiros li:nth-child(n + 5) {
+  /*colocanda a borda superior diretamente à partir do quinto item da lista*/
+  border-top: 2px solid var(--cor-2);
+}
+
+@media (max-width: 800px) {
+  .parceiros {
+    padding-bottom: 60px;
+  }
+  .parceiros h2 {
+    margin-bottom: 20px;
+  }
+  .parceiros ul {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /*abaixo de 800px os parceiros aparecen em duas colunas*/
+  }
+  .parceiros li:nth-child(n + 3) {
+    /*bordar superior a partir do terceiro item da lista (abaixo de 800px)*/
+    border-top: 2px solid var(--cor-2);
+  }
+  .parceiros li:nth-child(odd) {
+    /*retirada da borda esquerda dos itens ímpares da lista*/
+    border-left: none;
+  }
+}
