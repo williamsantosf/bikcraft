@@ -42,6 +42,25 @@ Obs.: por ser secundario, seu estilo deve obrigatoriamente estar abaixo do princ
   background: var(--cor-9);
 }
 
+.botao.seta {
+  display: flex;
+  align-items: center;
+}
+
+.botao.seta::after {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  margin-left: 12px;
+  background: url("../../img/icones/seta.svg");
+  transition: transform 0.2s; /*Propriedade ativada pela psudoclasse abaixo*/
+}
+
+.botao.seta:hover::after {
+  transform: translateX(4px); /*Essa propriedade move um elemento*/
+}
+
 /*Ajustando o Responsivo da Introdução*/
 @media (max-width: 600px) {
   /*Aqui diminuimos o tamanho do botão*/

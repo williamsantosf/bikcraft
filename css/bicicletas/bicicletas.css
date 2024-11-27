@@ -1,0 +1,128 @@
+.bicicletas-bg {
+  /*3 pois o item é o terceiro filho da div, contando o título*/
+  background: linear-gradient(to right, var(--cor-0) 30%, var(--cor-11) 0%);
+  /*A solução box-shadow não é adequada nesse cenário, pois seu valor seria fixo, ao passo que a tela pode crescer infinitamente.
+  Para criar o efeito ao fundo da Magic Might, utilizamos o linear-gradient estabelecendo em porcentagem, o ponto de quebra. --cor-11 está em 0, pois começa junto ao branco, que vai até 30%. Se ambas estiverem em 30%, teremos o mesmo efeito. Esse efeito não funciona no responsivo, sendo necessário especificar somente uma cor de fundo na media query.
+  */
+}
+/* Existem mais 02 formas de fazer o mesmo efeito:
+1. Removendo a div que tem a classe .bicicletas-bg dos demais itens;
+2. .bicicletas-bg:nth-child(odd), pitando somento os itens ímpares (não pintaria o primeiro pois não possui a classe);
+*/
+
+.bicicletas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+/*Para possicionar o preço, existem duas formas: uma com position relative, e a outra conforme abaixo:*/
+.bicicletas-imagem {
+  display: grid; /*colocamos a div em display grid*/
+}
+
+.bicicletas-imagem img {
+  grid-area: 1/1; /*colocamos a imagem para ocupar a primeira linha e primeira coluna desse mesmo grid*/
+}
+
+.bicicletas-imagem span {
+  grid-area: 1/1; /*o span vai ocupar a mesma posição*/
+  place-self: start end; /*posicionamos ao inicio e fim*/
+  margin-top: 20px;
+  background: var(--cor-12);
+  padding: 8px 16px 8px 8px;
+  display: inline-block; /*para que pegue os valores de padding*/
+  border-radius: 4px 0 0 4px;
+}
+
+/*O Botão e lista fazem parte de um mesmo grid, portanto a div bicicletas-conteudo deve ser um GRID*/
+
+.bicicletas-conteudo {
+  display: grid;
+  grid-template-columns: 1fr auto; /*O tamanho da segunda coluna será automático com relação à primeira*/
+  align-content: start; /*Alinhar o conteudo ao início, pois a medida que a imagem cresce, o conteúdo vai aumentando seu espaçamento para acompanhar a imagem, e não é isso que queremos.*/
+}
+
+/*Em seguida estilizamos cada conteúdo dentro desse grid.
+Obss.: por não existirem mais h2 e p dentro da div biciletas, vamos estilizar globalmente na div.
+*/
+
+.bicicletas h2,
+.bicicletas p {
+  grid-column: 1/-1; /*para que ocupem toda a linha*/
+}
+
+.bicicletas h2 {
+  margin-bottom: 20px;
+}
+
+/*Criação do pseudoelemento decorativo*/
+.bicicletas h2::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 8px;
+  background-color: var(--cor-p1);
+  margin-bottom: 8px;
+}
+
+.bicicletas p {
+  margin-bottom: 32px;
+}
+
+.bicicletas a {
+  place-self: end; /*para que o botão fique abaixo*/
+}
+
+.bicicletas li {
+  display: flex;
+  align-items: center;
+}
+
+/*Para separar os icones do texto da lista, temos 02 alternativas*/
+.bicicletas ul {
+  display: grid;
+  gap: 16px;
+}
+/*Ou*/
+/* 
+.bicicletas li + li {
+  margin-top: 16px;
+} */
+
+.bicicletas-conteudo img {
+  width: 24px;
+  margin-right: 8px;
+}
+
+/*RESPONSIVO*/
+
+@media (max-width: 800px) {
+  .bicicletas-bg {
+    background: none; /*VERIFICAR COM PROFESSOR*/
+    background-color: var(--cor-11);
+  }
+
+  .bicicletas {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+/*abaixo de 600px o botão está indo por cima do conteúdo, então:*/
+@media (max-width: 600px) {
+  .bicicletas-conteudo {
+    grid-template-columns: 1fr; /*lembrando que temos um grid dentro de outro grid*/
+  }
+  .bicicletas ul {
+    margin-bottom: 32px;
+    grid-template-columns: 1fr 1fr; /*Lembrando que a lista também está em grid*/
+    font-size: 1rem;
+  }
+  .bicicletas a {
+    place-self: start; /*posiciona o botão no inicio do seu lugar na grade*/
+  }
+}
