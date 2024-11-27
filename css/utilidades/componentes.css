@@ -19,6 +19,7 @@
   text-transform: uppercase; /*tudo em maíuscula*/
   color: var(--cor-p5); /*cordo texto*/
   font: 600 1.125rem/1.35 "Poppins", sans-serif;
+  max-width: max-content; /*para que o botão não ocupe toda a linha do grid*/
 }
 
 .botao:hover {
@@ -26,6 +27,19 @@
     #ffb60d,
     #e59317
   ); /*efetito do mouse ao tocar o botão*/
+}
+
+/*Criando a classe do botão secundario
+Obs.: por ser secundario, seu estilo deve obrigatoriamente estar abaixo do principal
+*/
+
+.botao.secundario {
+  background: var(--cor-10);
+  color: var(--cor-2);
+}
+
+.botao.secundario:hover {
+  background: var(--cor-9);
 }
 
 /*Ajustando o Responsivo da Introdução*/
