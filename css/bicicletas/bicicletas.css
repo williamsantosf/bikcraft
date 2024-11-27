@@ -100,8 +100,7 @@ Obss.: por não existirem mais h2 e p dentro da div biciletas, vamos estilizar g
 
 @media (max-width: 800px) {
   .bicicletas-bg {
-    background: none; /*VERIFICAR COM PROFESSOR*/
-    background-color: var(--cor-11);
+    background: var(--cor-11);
   }
 
   .bicicletas {
