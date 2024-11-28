@@ -11,6 +11,11 @@
   align-items: center;
 }
 
+#seguros .seguros {
+  /*Usamos o seletor de âncora para alterar o estilo de um componente somente em determinada página. Note que a seção seguros da home utiliza as mesmas classes.*/
+  padding-top: 0px;
+}
+
 .seguros h2 {
   grid-column: 1/-1; /*para que otítulo da seção ocupe toda a largura do container, os demais itens seguem a grade.*/
 }
@@ -20,6 +25,7 @@
   padding: 32px 32px 32px 60px;
   display: grid; /*o card de seguros também será um grid*/
   grid-template-columns: 1fr auto; /*a segunda coluta terá a largura auto, ou seja, a largura do conteudo*/
+  border-radius: 4px;
 }
 
 .seguros-item h3 {
