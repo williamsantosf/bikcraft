@@ -1,0 +1,66 @@
+.perguntas {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.perguntas h2 {
+  margin-bottom: 60px;
+}
+
+/*seletor que indica somente as divs filhas diretas de dl.*/
+.perguntas dl > div {
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/*aplicando esse estilo somente aos filhos impares de dl*/
+.perguntas dl > div:nth-child(odd) {
+  background-color: var(--cor-1);
+}
+
+/*Abaixo posicionamos os pseudoelementos transformando a dt em um grid de tres colunas, note que não estamos usando position relative*/
+.perguntas dt {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /*primeira coluna auto, segunda 1fr e terceira auto*/
+  align-items: center; /*alinhamos pergunta, decorador e seta ao centro*/
+  gap: 8px;
+  cursor: pointer; /*para transformar o cursos em uma mão*/
+}
+
+/*Criação dos pseudo-elementos*/
+.perguntas dt::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  background-color: var(--cor-p1);
+}
+
+.perguntas dt::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 6px;
+  background: url("../../img/icones/seta-abrir.svg");
+  transition: 0.3s; /*a tarnsição necessária para a seta mudar de posição suavemnte*/
+}
+
+.perguntas dt:hover::after {
+  transform: rotate(180deg); /*pseudoclasse que rotaciona a seta*/
+}
+
+.perguntas dd {
+  padding-left: 20px;
+  padding-top: 16px;
+  max-width: 80ch;
+}
+
+@media (max-width: 800px) {
+  .perguntas {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .perguntas h2 {
+    margin-bottom: 40px;
+  }
+}
