@@ -14,6 +14,16 @@
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  overflow-x: auto; /*controla como o conteúdo que excede a largura do elemento pai será tratado. Ela é uma forma específica de lidar com o overflow horizontal, ou seja, o conteúdo que se estende além da borda direita do elemento contêiner. Aqui, caso for maior do que a largura do contêiner, uma barra de rolagem horizontal aparecerá automaticamente*/
+}
+
+#bicileta .bicicletas-lista ul {
+  padding: 0px 0px 20px 0px; /* Para ajustar essa sessão na pagina de cada bicicleta, lá exite o id: bicicleta*/
+}
+
+.bicicletas-lista li {
+  flex: 1;
+  min-width: 280px;
 }
 
 .bicicletas-lista a {
