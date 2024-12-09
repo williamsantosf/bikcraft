@@ -20,6 +20,8 @@
   color: var(--cor-p5); /*cordo texto*/
   font: 600 1.125rem/1.35 "Poppins", sans-serif;
   max-width: max-content; /*para que o botão não ocupe toda a linha do grid*/
+  border: none; /*Para retirar a borda do botão do formulario, que por padrão tem borda. Nesse caso os demais botões do site não se alteram*/
+  cursor: pointer;
 }
 
 .botao:hover {
